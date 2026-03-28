@@ -9,6 +9,20 @@ HAZOP Assistant automates Hazard and Operability studies by reading P&ID diagram
 
 ---
 
+## Demo Video
+
+<div align="center">
+
+[![HAZOP Assistant Agent Demo](https://img.youtube.com/vi/YRSl7tYnoB4/maxresdefault.jpg)](https://www.youtube.com/watch?v=YRSl7tYnoB4)
+
+**[Watch the full demo on YouTube](https://www.youtube.com/watch?v=YRSl7tYnoB4)**
+
+*Upload a P&ID diagram, AI identifies nodes, generates deviations, produces Excel & PDF reports*
+
+</div>
+
+---
+
 ## What We Built
 
 HAZOP studies are the cornerstone of process safety in chemical, petrochemical, and oil & gas industries. A typical study takes a team of 6-8 engineers 2-4 weeks to complete manually. HAZOP Assistant reduces the initial analysis from weeks to minutes by:
