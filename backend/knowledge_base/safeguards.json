@@ -1,0 +1,651 @@
+{
+  "reactor": {
+    "MORE_Pressure": {
+      "standard_safeguards": [
+        {
+          "name": "Pressure Safety Valve (PSV)",
+          "type": "PSV",
+          "description": "Spring-loaded relief valve sized for worst-case overpressure scenario including runaway reaction, external fire, and blocked outlet"
+        },
+        {
+          "name": "High Pressure Alarm",
+          "type": "alarm",
+          "description": "Process alarm at 90% of design pressure to alert operators"
+        },
+        {
+          "name": "High-High Pressure Trip",
+          "type": "SIS",
+          "description": "Safety instrumented function (SIF) that initiates emergency shutdown on high-high pressure, closing feed valves and activating emergency cooling"
+        },
+        {
+          "name": "Rupture Disc",
+          "type": "mechanical",
+          "description": "Rupture disc upstream of PSV for corrosive or polymerizing service, or as independent relief path"
+        },
+        {
+          "name": "Emergency Depressurization",
+          "type": "SIS",
+          "description": "Automated or manual depressurization to flare/vent system to reduce vessel pressure in emergency"
+        }
+      ],
+      "recommended_additional": [
+        "Independent pressure transmitter for SIS (separate from BPCS)",
+        "Reactor quench system for runaway reaction scenarios",
+        "Emergency cooling water supply from independent source",
+        "Dump/drain system to safe containment vessel"
+      ],
+      "typical_gaps": "Often the PSV is not sized for the runaway reaction scenario. SIS independence from BPCS may not meet SIL requirements. Emergency cooling may share supply with normal cooling."
+    },
+    "MORE_Temperature": {
+      "standard_safeguards": [
+        {
+          "name": "High Temperature Alarm",
+          "type": "alarm",
+          "description": "Process alarm at high temperature setpoint to alert operators to take corrective action"
+        },
+        {
+          "name": "High-High Temperature Trip",
+          "type": "SIS",
+          "description": "SIF that shuts down reactor feed and activates emergency cooling on high-high temperature"
+        },
+        {
+          "name": "Emergency Cooling System",
+          "type": "mechanical",
+          "description": "Dedicated emergency cooling circuit independent of normal process cooling"
+        },
+        {
+          "name": "Reactor Quench System",
+          "type": "mechanical",
+          "description": "Injection of quench medium (water, solvent, or inhibitor) to terminate reaction and absorb heat"
+        }
+      ],
+      "recommended_additional": [
+        "Reaction calorimetry to characterize thermal runaway scenarios",
+        "Multiple independent temperature measurements at different locations",
+        "Rate-of-rise temperature alarm for early runaway detection",
+        "Automatic feed shutoff on loss of cooling"
+      ],
+      "typical_gaps": "Single temperature measurement point may not detect hot spots. Quench system may not be adequate for worst-case runaway. Emergency cooling capacity may be insufficient."
+    },
+    "NO_Flow": {
+      "standard_safeguards": [
+        {
+          "name": "Low Flow Alarm",
+          "type": "alarm",
+          "description": "Process alarm on low feed flow to alert operators"
+        },
+        {
+          "name": "Standby Feed Pump",
+          "type": "mechanical",
+          "description": "Redundant pump with automatic switchover on primary pump failure"
+        },
+        {
+          "name": "Low-Low Flow Trip",
+          "type": "SIS",
+          "description": "SIF that initiates controlled shutdown on loss of feed flow to prevent dry running or overheating"
+        }
+      ],
+      "recommended_additional": [
+        "Diverse flow measurement technology (Coriolis + orifice plate)",
+        "Minimum flow bypass line on feed pump",
+        "Interlock to shut heating on loss of feed",
+        "Emergency operating procedure for loss of feed"
+      ],
+      "typical_gaps": "Pump switchover may not be fast enough. Flow measurement may be unreliable for two-phase or fouling service. No interlock between feed flow and heating system."
+    }
+  },
+  "heat_exchanger": {
+    "MORE_Pressure": {
+      "standard_safeguards": [
+        {
+          "name": "PSV on Low-Pressure Side",
+          "type": "PSV",
+          "description": "Relief valve on the low-pressure side to protect against tube rupture overpressure"
+        },
+        {
+          "name": "Pressure Indicators",
+          "type": "alarm",
+          "description": "Pressure monitoring on both tube and shell sides with high alarms"
+        },
+        {
+          "name": "Design Pressure Rating",
+          "type": "mechanical",
+          "description": "Both sides designed and rated per ASME Section VIII with adequate margin"
+        }
+      ],
+      "recommended_additional": [
+        "Differential pressure monitoring between tube and shell sides for leak detection",
+        "Thermal relief valves on isolated sections",
+        "Regular thickness measurements for corrosion monitoring",
+        "Tube inspection program (eddy current, IRIS)"
+      ],
+      "typical_gaps": "PSV on low-pressure side may not be sized for full tube rupture scenario. No differential pressure monitoring for early leak detection. Thermal expansion relief missing on blocked-in sections."
+    },
+    "MORE_Temperature": {
+      "standard_safeguards": [
+        {
+          "name": "Outlet Temperature Control",
+          "type": "alarm",
+          "description": "Temperature control loop on cooling/heating medium with high temperature alarm on process outlet"
+        },
+        {
+          "name": "Bypass Valve",
+          "type": "mechanical",
+          "description": "Bypass around heat exchanger for temperature control and emergency operation"
+        },
+        {
+          "name": "Material Selection",
+          "type": "mechanical",
+          "description": "Materials of construction selected for maximum expected temperature including upsets"
+        }
+      ],
+      "recommended_additional": [
+        "Independent high temperature trip on process outlet",
+        "Fouling monitoring program (U-value tracking)",
+        "Emergency cooling water supply",
+        "Regular tube bundle inspection and cleaning schedule"
+      ],
+      "typical_gaps": "Temperature monitoring may only be on outlet, missing intermediate hot spots. No automatic response to high temperature. Fouling allowance may be inadequate."
+    },
+    "NO_Flow": {
+      "standard_safeguards": [
+        {
+          "name": "Low Flow Alarms",
+          "type": "alarm",
+          "description": "Flow monitoring on both process and utility sides with low flow alarms"
+        },
+        {
+          "name": "Bypass Valve",
+          "type": "mechanical",
+          "description": "Emergency bypass for continued operation during loss of one flow"
+        },
+        {
+          "name": "Temperature Monitoring",
+          "type": "alarm",
+          "description": "Outlet temperature monitoring to detect loss of heat transfer"
+        }
+      ],
+      "recommended_additional": [
+        "Interlock to trip heating/cooling on loss of process flow",
+        "Standby utility supply (cooling water, steam)",
+        "Thermal shock prevention procedures for flow restoration"
+      ],
+      "typical_gaps": "No interlock between utility flow and process flow. No procedures for safe restoration after no-flow event. Thermal shock risk during flow restoration not addressed."
+    }
+  },
+  "distillation_column": {
+    "MORE_Pressure": {
+      "standard_safeguards": [
+        {
+          "name": "Column PSV",
+          "type": "PSV",
+          "description": "Pressure safety valve on column overhead sized for worst-case scenario (condenser failure)"
+        },
+        {
+          "name": "High Pressure Alarm and Trip",
+          "type": "SIS",
+          "description": "High pressure alarm with high-high trip to shut feed and reboiler steam"
+        },
+        {
+          "name": "Condenser Duty Monitoring",
+          "type": "alarm",
+          "description": "Monitoring of cooling water flow and temperature to detect condenser problems early"
+        }
+      ],
+      "recommended_additional": [
+        "Emergency condenser or air cooler backup",
+        "Inert gas blanket system for vacuum columns",
+        "Feed surge drum to buffer feed interruptions",
+        "Automatic pressure control on overhead with split-range to vent"
+      ],
+      "typical_gaps": "PSV discharge to atmosphere may not be acceptable for toxic service. No backup cooling for condenser failure. Pressure control may not handle rapid pressure transients."
+    },
+    "MORE_Level": {
+      "standard_safeguards": [
+        {
+          "name": "High Level Alarm",
+          "type": "alarm",
+          "description": "Level alarm in column sump/bottom to alert operators"
+        },
+        {
+          "name": "High-High Level Trip",
+          "type": "SIS",
+          "description": "Independent level switch that trips feed pump on high-high level"
+        },
+        {
+          "name": "Standby Bottoms Pump",
+          "type": "mechanical",
+          "description": "Redundant pump with auto-start capability"
+        }
+      ],
+      "recommended_additional": [
+        "Diverse level measurement technology (radar + displacer)",
+        "Overflow line to safe location",
+        "Feed flow control with column level cascade",
+        "Regular level instrument calibration program"
+      ],
+      "typical_gaps": "Single level measurement technology may fail in foaming service. No overflow protection. Level trip may share same instrument as control."
+    }
+  },
+  "pump": {
+    "NO_Flow": {
+      "standard_safeguards": [
+        {
+          "name": "Low Flow Alarm",
+          "type": "alarm",
+          "description": "Flow measurement with low alarm to alert operators to pump issues"
+        },
+        {
+          "name": "Minimum Flow Bypass",
+          "type": "mechanical",
+          "description": "Recirculation line to prevent deadheading and ensure minimum flow through pump"
+        },
+        {
+          "name": "Standby Pump",
+          "type": "mechanical",
+          "description": "Installed spare pump with auto-start on primary pump trip"
+        },
+        {
+          "name": "Motor Overload Protection",
+          "type": "interlock",
+          "description": "Electrical protection to trip pump motor on overload"
+        }
+      ],
+      "recommended_additional": [
+        "Vibration monitoring with trending and alarm",
+        "Suction pressure monitoring for cavitation detection",
+        "Seal failure detection (leak detection, pressure monitoring)",
+        "Bearing temperature monitoring"
+      ],
+      "typical_gaps": "Auto-start of standby may not be fast enough to prevent process upset. Minimum flow bypass may be undersized. No seal failure detection."
+    },
+    "MORE_Pressure": {
+      "standard_safeguards": [
+        {
+          "name": "PSV on Discharge",
+          "type": "PSV",
+          "description": "Relief valve on pump discharge protecting downstream piping"
+        },
+        {
+          "name": "High Discharge Pressure Alarm",
+          "type": "alarm",
+          "description": "Pressure alarm on pump discharge"
+        },
+        {
+          "name": "Motor Overload",
+          "type": "interlock",
+          "description": "Motor protection relay limits maximum power draw"
+        }
+      ],
+      "recommended_additional": [
+        "Discharge pressure trip to stop pump",
+        "Pressure-rated piping verified to maximum pump shutoff pressure",
+        "Regular pump performance testing"
+      ],
+      "typical_gaps": "Downstream piping may not be rated for pump dead-head pressure. No automatic pump trip on high discharge pressure."
+    },
+    "REVERSE_Flow": {
+      "standard_safeguards": [
+        {
+          "name": "Check Valve",
+          "type": "mechanical",
+          "description": "Non-return valve on pump discharge to prevent reverse flow"
+        },
+        {
+          "name": "Anti-Reverse Rotation",
+          "type": "mechanical",
+          "description": "Ratchet or other device to prevent reverse rotation of pump shaft"
+        }
+      ],
+      "recommended_additional": [
+        "Dual check valves for critical service",
+        "Startup procedure requiring check of valve function",
+        "Regular check valve testing program"
+      ],
+      "typical_gaps": "Check valve may not be regularly tested for tightness. Single check valve may stick or leak. No monitoring of check valve performance."
+    }
+  },
+  "compressor": {
+    "NO_Flow": {
+      "standard_safeguards": [
+        {
+          "name": "Anti-Surge Control System",
+          "type": "SIS",
+          "description": "Dedicated anti-surge controller with recycle valve to prevent compressor surge"
+        },
+        {
+          "name": "Standby Compressor",
+          "type": "mechanical",
+          "description": "Redundant compressor for critical service"
+        },
+        {
+          "name": "Low Suction Pressure Trip",
+          "type": "SIS",
+          "description": "Trip compressor on low suction pressure to prevent damage"
+        },
+        {
+          "name": "Vibration Monitoring",
+          "type": "alarm",
+          "description": "Continuous vibration monitoring with alarm and trip levels"
+        }
+      ],
+      "recommended_additional": [
+        "Performance monitoring system for early degradation detection",
+        "Surge detection with fast-acting recycle valve",
+        "Emergency blowdown capability",
+        "Process simulation of off-design operating cases"
+      ],
+      "typical_gaps": "Anti-surge valve may not be fast enough for rapid transients. Standby compressor startup time may be too long. Vibration trip setpoints may not catch all failure modes."
+    },
+    "MORE_Pressure": {
+      "standard_safeguards": [
+        {
+          "name": "High Discharge Pressure Trip",
+          "type": "SIS",
+          "description": "Trip compressor on high discharge pressure"
+        },
+        {
+          "name": "Discharge PSV",
+          "type": "PSV",
+          "description": "Relief valve on compressor discharge"
+        },
+        {
+          "name": "Anti-Surge System",
+          "type": "SIS",
+          "description": "Recycle to prevent operation in surge region"
+        }
+      ],
+      "recommended_additional": [
+        "Independent pressure transmitter for SIS",
+        "Emergency depressurization to flare",
+        "Interstage pressure monitoring and trip",
+        "Motor/driver overload protection"
+      ],
+      "typical_gaps": "Discharge piping may not be designed for relief valve accumulation pressure. No interstage relief between stages. SIS may share instruments with BPCS."
+    }
+  },
+  "storage_tank": {
+    "MORE_Level": {
+      "standard_safeguards": [
+        {
+          "name": "High Level Alarm",
+          "type": "alarm",
+          "description": "Tank level alarm at high setpoint to alert operators"
+        },
+        {
+          "name": "High-High Level Trip",
+          "type": "SIS",
+          "description": "Independent level switch that closes inlet valve on high-high level per API 2350"
+        },
+        {
+          "name": "Bund/Containment",
+          "type": "mechanical",
+          "description": "Secondary containment (bund wall) sized for full tank volume"
+        },
+        {
+          "name": "Operator Monitoring",
+          "type": "procedural",
+          "description": "Operator rounds and manual tank gauging during transfers"
+        }
+      ],
+      "recommended_additional": [
+        "Automatic tank gauging (ATG) system per API 2350 Category 3",
+        "CCTV monitoring of tank area",
+        "Overfill prevention system with SIL rating",
+        "Diverse level measurement technology (radar + servo gauge)"
+      ],
+      "typical_gaps": "High-high level switch may be same technology as level gauge (common mode failure). Bund integrity may be compromised (cracks, drain valves left open). No independent verification of tank level before transfer start."
+    },
+    "LESS_Level": {
+      "standard_safeguards": [
+        {
+          "name": "Low Level Alarm",
+          "type": "alarm",
+          "description": "Tank level alarm at low setpoint"
+        },
+        {
+          "name": "Vacuum Relief Valve",
+          "type": "mechanical",
+          "description": "Vacuum relief on enclosed tanks to prevent collapse during pumpout"
+        },
+        {
+          "name": "Leak Detection",
+          "type": "alarm",
+          "description": "Tank bottom leak detection system and bund monitoring"
+        }
+      ],
+      "recommended_additional": [
+        "Low-low level trip to stop outlet pump",
+        "Tank floor inspection program (MFL, UT)",
+        "Cathodic protection for tank bottom",
+        "Tank settlement monitoring"
+      ],
+      "typical_gaps": "No pump trip on low level (operator response only). Tank floor inspection frequency may be inadequate. Cathodic protection may not be monitored."
+    },
+    "MORE_Temperature": {
+      "standard_safeguards": [
+        {
+          "name": "Temperature Monitoring",
+          "type": "alarm",
+          "description": "Temperature measurement with high alarm"
+        },
+        {
+          "name": "Fire Protection",
+          "type": "mechanical",
+          "description": "Foam and water cooling systems per NFPA 11 and 15"
+        },
+        {
+          "name": "Tank Insulation/Painting",
+          "type": "mechanical",
+          "description": "Solar radiation protection and thermal insulation where needed"
+        }
+      ],
+      "recommended_additional": [
+        "Water spray system for external fire exposure",
+        "Vapor recovery system to reduce emissions",
+        "Fire detection in tank farm area",
+        "Emergency response plan for tank fire"
+      ],
+      "typical_gaps": "Fire water supply may not be adequate for simultaneous events. Foam system may not be regularly tested. No detection of internal temperature changes."
+    }
+  },
+  "valve": {
+    "NO_Flow": {
+      "standard_safeguards": [
+        {
+          "name": "Valve Position Indication",
+          "type": "alarm",
+          "description": "Open/closed position switches and indication in control room"
+        },
+        {
+          "name": "Fail-Safe Actuator",
+          "type": "mechanical",
+          "description": "Actuator designed to fail in safe position (open or closed as appropriate)"
+        },
+        {
+          "name": "Bypass Valve",
+          "type": "mechanical",
+          "description": "Manual bypass for critical service to maintain flow during valve failure"
+        }
+      ],
+      "recommended_additional": [
+        "Partial stroke testing for safety-critical valves",
+        "Valve maintenance and testing program",
+        "Diverse redundancy for critical shutoff (two valves in series)",
+        "Smart positioner with diagnostics"
+      ],
+      "typical_gaps": "Valve fail-safe position may not be clearly defined for all scenarios. Partial stroke testing not implemented. No valve diagnostics to detect degradation."
+    }
+  },
+  "pipeline": {
+    "MORE_Pressure": {
+      "standard_safeguards": [
+        {
+          "name": "Thermal Relief Valves",
+          "type": "PSV",
+          "description": "Relief valves on blocked-in pipeline sections to protect against thermal expansion"
+        },
+        {
+          "name": "Pressure-Rated Piping",
+          "type": "mechanical",
+          "description": "Piping designed and fabricated per ASME B31.3 or B31.4/B31.8 with appropriate rating"
+        },
+        {
+          "name": "Surge Analysis",
+          "type": "procedural",
+          "description": "Hydraulic surge analysis performed during design to size protection"
+        }
+      ],
+      "recommended_additional": [
+        "Surge arrestors or dampeners for water hammer protection",
+        "Slow-closing valve actuators to prevent pressure surge",
+        "Pressure monitoring at key locations",
+        "Regular wall thickness measurement program"
+      ],
+      "typical_gaps": "Thermal relief may be missing on some dead-legs. Surge analysis may not cover all operating scenarios. Valve closure times may not be specified."
+    },
+    "NO_Flow": {
+      "standard_safeguards": [
+        {
+          "name": "Flow Monitoring",
+          "type": "alarm",
+          "description": "Flow measurement with low flow alarm"
+        },
+        {
+          "name": "Pipeline Pigging",
+          "type": "procedural",
+          "description": "Regular pigging program for cleaning and inspection"
+        },
+        {
+          "name": "Heat Tracing",
+          "type": "mechanical",
+          "description": "Electric or steam heat tracing to prevent solidification/hydrate formation"
+        }
+      ],
+      "recommended_additional": [
+        "Wax/hydrate inhibitor injection",
+        "Pressure differential monitoring for blockage detection",
+        "Emergency bypass or alternate routing",
+        "Cold restart procedures"
+      ],
+      "typical_gaps": "Heat tracing may not be monitored for failures. No blockage detection system. Pigging frequency may be insufficient."
+    }
+  },
+  "separator": {
+    "MORE_Level": {
+      "standard_safeguards": [
+        {
+          "name": "High Level Alarm",
+          "type": "alarm",
+          "description": "Level alarm on high setpoint to alert operators"
+        },
+        {
+          "name": "High-High Level Trip",
+          "type": "SIS",
+          "description": "Independent level switch that closes inlet or opens dump valve"
+        },
+        {
+          "name": "Demister/Mist Eliminator",
+          "type": "mechanical",
+          "description": "Mist elimination device to prevent liquid carryover to gas outlet"
+        }
+      ],
+      "recommended_additional": [
+        "Slug catcher upstream of separator",
+        "Interface level measurement for three-phase separators",
+        "Diverse level measurement technology",
+        "Standby liquid outlet pump"
+      ],
+      "typical_gaps": "Interface level measurement may be unreliable in emulsion-forming service. No protection against slug flow. Demister may flood at high liquid levels."
+    },
+    "LESS_Level": {
+      "standard_safeguards": [
+        {
+          "name": "Low Level Alarm",
+          "type": "alarm",
+          "description": "Level alarm on low setpoint"
+        },
+        {
+          "name": "Low-Low Level Trip",
+          "type": "SIS",
+          "description": "Trip to close liquid outlet valve or stop downstream pump on low-low level"
+        },
+        {
+          "name": "Gas Detection",
+          "type": "alarm",
+          "description": "Gas detection on liquid outlet line to detect gas breakthrough"
+        }
+      ],
+      "recommended_additional": [
+        "Diverse level measurement for low level protection",
+        "Automatic feed control to maintain minimum level",
+        "Seal pot or liquid trap on liquid outlet"
+      ],
+      "typical_gaps": "Gas blowby detection may not be fast enough. Level measurement may be unreliable at very low levels. No liquid seal mechanism."
+    }
+  },
+  "furnace": {
+    "NO_Flow": {
+      "standard_safeguards": [
+        {
+          "name": "Low Flow Trip",
+          "type": "SIS",
+          "description": "SIF that shuts fuel gas supply on low process flow to prevent tube overheating"
+        },
+        {
+          "name": "Tube Metal Temperature Monitoring",
+          "type": "alarm",
+          "description": "Thermocouples on furnace tubes with high temperature alarm"
+        },
+        {
+          "name": "Snuffing Steam",
+          "type": "mechanical",
+          "description": "Steam injection system to extinguish firebox fire in emergency"
+        },
+        {
+          "name": "Emergency Shutdown",
+          "type": "SIS",
+          "description": "ESD system that shuts fuel, feed, and activates snuffing steam"
+        }
+      ],
+      "recommended_additional": [
+        "Individual pass flow measurement and trip",
+        "Decoking facilities (online or offline)",
+        "Burner management system (BMS) per NFPA 86",
+        "Continuous emissions monitoring"
+      ],
+      "typical_gaps": "Individual pass flow may not be measured. Tube temperature measurement may not cover all tubes. Decoking may be infrequent leading to flow maldistribution."
+    },
+    "MORE_Temperature": {
+      "standard_safeguards": [
+        {
+          "name": "High Tube Metal Temperature Trip",
+          "type": "SIS",
+          "description": "Trip fuel supply on high tube metal temperature"
+        },
+        {
+          "name": "Stack Temperature Monitoring",
+          "type": "alarm",
+          "description": "High stack temperature alarm indicating excess firing or afterburn"
+        },
+        {
+          "name": "Fuel Gas Shutoff",
+          "type": "SIS",
+          "description": "Multiple trip conditions that shut fuel supply: high TMT, low flow, flame failure"
+        },
+        {
+          "name": "Fire Detection",
+          "type": "alarm",
+          "description": "Fire and flame detection in firebox and convection section"
+        }
+      ],
+      "recommended_additional": [
+        "Advanced flame monitoring (UV/IR sensors per burner)",
+        "Combustion air control optimization",
+        "Regular tube inspection (metallurgical, thickness)",
+        "Predictive maintenance program for burners"
+      ],
+      "typical_gaps": "Not all tubes may have TMT monitoring. Stack temperature alone may not detect localized hot spots. Burner flame quality may not be monitored individually."
+    }
+  }
+}

@@ -1,0 +1,882 @@
+{
+  "reactor": {
+    "applicable_guide_words": ["NO", "MORE", "LESS", "REVERSE", "AS WELL AS", "OTHER THAN"],
+    "applicable_parameters": ["Flow", "Temperature", "Pressure", "Level", "Composition"],
+    "deviations": {
+      "NO_FLOW": {
+        "common_causes": [
+          "Feed pump failure or trip",
+          "Feed line blockage (catalyst fouling, polymerization)",
+          "Control valve fails closed",
+          "Upstream vessel empty"
+        ],
+        "common_consequences": [
+          "Loss of reaction / incomplete conversion",
+          "Thermal runaway if exothermic reaction continues with residual material",
+          "Catalyst damage due to overheating",
+          "Product quality deviation"
+        ],
+        "standard_safeguards": [
+          "Low flow alarm on feed line",
+          "Pump standby with auto-switchover",
+          "Emergency shutdown system (ESD)",
+          "Temperature monitoring with high-high trip"
+        ]
+      },
+      "MORE_TEMPERATURE": {
+        "common_causes": [
+          "Cooling system failure (coolant loss, heat exchanger fouling)",
+          "Exothermic reaction runaway",
+          "Loss of agitation causing hot spots",
+          "Incorrect catalyst charge",
+          "Feed composition deviation (higher reactant concentration)"
+        ],
+        "common_consequences": [
+          "Thermal runaway leading to overpressure",
+          "Vessel rupture or explosion",
+          "Release of toxic materials",
+          "Catalyst deactivation",
+          "Product decomposition generating hazardous byproducts"
+        ],
+        "standard_safeguards": [
+          "High temperature alarm and trip",
+          "Emergency cooling system",
+          "Pressure safety valve (PSV) sized for runaway scenario",
+          "Reactor quench system",
+          "SIS for reactor trip on high-high temperature"
+        ]
+      },
+      "MORE_PRESSURE": {
+        "common_causes": [
+          "Blocked outlet line",
+          "Thermal runaway generating excess gas",
+          "External fire exposure",
+          "Control valve fails closed on outlet",
+          "Inadequate vent capacity"
+        ],
+        "common_consequences": [
+          "Vessel overpressure and potential rupture",
+          "Release of flammable/toxic contents",
+          "Explosion hazard (BLEVE if two-phase)",
+          "Structural damage to surrounding equipment"
+        ],
+        "standard_safeguards": [
+          "Pressure safety valve (PSV)",
+          "High pressure alarm and trip",
+          "Rupture disc",
+          "Emergency depressurization system",
+          "Pressure-rated vessel design with safety margin"
+        ]
+      },
+      "LESS_TEMPERATURE": {
+        "common_causes": [
+          "Excessive cooling",
+          "Feed temperature too low",
+          "Loss of heating medium",
+          "Ambient temperature drop (winter conditions)"
+        ],
+        "common_consequences": [
+          "Incomplete reaction / low conversion",
+          "Solidification or crystallization",
+          "Viscosity increase causing mixing problems",
+          "Off-spec product"
+        ],
+        "standard_safeguards": [
+          "Low temperature alarm",
+          "Feed preheater with temperature control",
+          "Heat tracing on critical lines"
+        ]
+      },
+      "AS_WELL_AS_COMPOSITION": {
+        "common_causes": [
+          "Contaminated feed supply",
+          "Wrong feed tank selected",
+          "Corrosion products entering reactor",
+          "Air ingress through leaking seals"
+        ],
+        "common_consequences": [
+          "Unexpected exothermic reaction",
+          "Catalyst poisoning",
+          "Formation of hazardous byproducts",
+          "Corrosion of reactor internals"
+        ],
+        "standard_safeguards": [
+          "Feed quality analysis and monitoring",
+          "Composition analyzers on feed streams",
+          "Operating procedures for feed changeover"
+        ]
+      },
+      "MORE_LEVEL": {
+        "common_causes": [
+          "Outlet line blockage",
+          "Outlet valve fails closed",
+          "Excess feed flow rate",
+          "Level controller malfunction"
+        ],
+        "common_consequences": [
+          "Overflow into vent or downstream systems",
+          "Liquid carryover causing downstream damage",
+          "Loss of vapor space (no room for pressure relief)"
+        ],
+        "standard_safeguards": [
+          "High level alarm and trip",
+          "Independent high-high level switch",
+          "Overflow line to safe location"
+        ]
+      }
+    }
+  },
+  "heat_exchanger": {
+    "applicable_guide_words": ["NO", "MORE", "LESS", "REVERSE", "AS WELL AS"],
+    "applicable_parameters": ["Flow", "Temperature", "Pressure", "Composition"],
+    "deviations": {
+      "NO_FLOW": {
+        "common_causes": [
+          "Tube side or shell side blockage (fouling, scaling)",
+          "Pump failure on either side",
+          "Isolation valve left closed after maintenance",
+          "Thermal expansion causing tube rupture"
+        ],
+        "common_consequences": [
+          "Loss of heating or cooling duty",
+          "Overheating or overcooling of process stream",
+          "Thermal shock if flow restored suddenly",
+          "Downstream process upset"
+        ],
+        "standard_safeguards": [
+          "Low flow alarms on both sides",
+          "Bypass valve for emergency operation",
+          "Temperature monitoring on outlet streams"
+        ]
+      },
+      "MORE_TEMPERATURE": {
+        "common_causes": [
+          "Loss of cooling medium flow",
+          "Fouling reducing heat transfer",
+          "Higher than expected process inlet temperature",
+          "Control valve malfunction on cooling side"
+        ],
+        "common_consequences": [
+          "Overheating of process fluid",
+          "Thermal decomposition of heat-sensitive materials",
+          "Tube expansion and potential leak",
+          "High pressure if fluid vaporizes"
+        ],
+        "standard_safeguards": [
+          "High temperature alarm on process outlet",
+          "Temperature control loop on cooling medium",
+          "PSV on shell side for blocked-in overpressure",
+          "Regular fouling monitoring"
+        ]
+      },
+      "MORE_PRESSURE": {
+        "common_causes": [
+          "Tube rupture causing high-pressure side to communicate with low-pressure side",
+          "Blocked outlet with continued heating",
+          "Water hammer in steam systems",
+          "External fire exposure"
+        ],
+        "common_consequences": [
+          "Shell or tube rupture",
+          "Cross-contamination of process and utility streams",
+          "Release of process fluid to environment",
+          "Overpressure of downstream equipment"
+        ],
+        "standard_safeguards": [
+          "PSV on low-pressure side",
+          "Pressure indicators on both sides",
+          "Design pressure rating with adequate margin",
+          "Bellows or expansion joints for thermal expansion"
+        ]
+      },
+      "LESS_FLOW": {
+        "common_causes": [
+          "Partial blockage from fouling or debris",
+          "Pump degradation",
+          "Control valve partially closed",
+          "Insufficient utility supply"
+        ],
+        "common_consequences": [
+          "Reduced heat transfer efficiency",
+          "Gradual temperature deviation",
+          "Increased fouling rate",
+          "Off-spec downstream conditions"
+        ],
+        "standard_safeguards": [
+          "Flow measurement on both sides",
+          "Regular performance monitoring (U-value tracking)",
+          "Standby equipment availability"
+        ]
+      }
+    }
+  },
+  "distillation_column": {
+    "applicable_guide_words": ["NO", "MORE", "LESS", "REVERSE", "AS WELL AS", "OTHER THAN"],
+    "applicable_parameters": ["Flow", "Temperature", "Pressure", "Level", "Composition"],
+    "deviations": {
+      "MORE_PRESSURE": {
+        "common_causes": [
+          "Condenser failure (loss of cooling water)",
+          "Overhead line blockage",
+          "Inert gas accumulation",
+          "Non-condensables in feed",
+          "Flooding due to excessive feed rate"
+        ],
+        "common_consequences": [
+          "Column overpressure",
+          "Relief valve lifting with loss of product",
+          "Structural damage to column internals (trays/packing)",
+          "Reduced separation efficiency"
+        ],
+        "standard_safeguards": [
+          "PSV on column overhead",
+          "High pressure alarm and trip",
+          "Condenser duty monitoring",
+          "Inert gas vent system"
+        ]
+      },
+      "MORE_TEMPERATURE": {
+        "common_causes": [
+          "Reboiler overduty (steam control valve fails open)",
+          "Loss of reflux",
+          "Feed composition change (heavier components)",
+          "Reduced condenser capacity"
+        ],
+        "common_consequences": [
+          "Off-spec overhead product (heavy key contamination)",
+          "Increased reboiler pressure",
+          "Thermal degradation of temperature-sensitive products",
+          "Column flooding"
+        ],
+        "standard_safeguards": [
+          "Reboiler temperature control with high alarm",
+          "Reflux flow monitoring",
+          "Tray temperature monitoring",
+          "Feed composition analysis"
+        ]
+      },
+      "NO_FLOW": {
+        "common_causes": [
+          "Feed pump trip",
+          "Loss of reflux pump",
+          "Reboiler tube leak causing loss of inventory",
+          "Blocked feed line"
+        ],
+        "common_consequences": [
+          "Column dries out and overheats",
+          "Loss of separation and off-spec products",
+          "Tray damage from thermal stress",
+          "Need for full column restart"
+        ],
+        "standard_safeguards": [
+          "Feed flow monitoring and low alarm",
+          "Reflux flow monitoring with low-low trip",
+          "Level monitoring in reboiler sump",
+          "Emergency operating procedures"
+        ]
+      },
+      "MORE_LEVEL": {
+        "common_causes": [
+          "Bottoms pump failure",
+          "Bottoms line blockage",
+          "Excessive feed rate",
+          "Level controller malfunction"
+        ],
+        "common_consequences": [
+          "Liquid flooding of column trays",
+          "Loss of separation efficiency",
+          "Carryover of liquid to overhead system",
+          "Potential overpressure if liquid blocks vapor flow"
+        ],
+        "standard_safeguards": [
+          "High level alarm in column sump",
+          "High-high level trip",
+          "Standby bottoms pump",
+          "Overflow line"
+        ]
+      }
+    }
+  },
+  "pump": {
+    "applicable_guide_words": ["NO", "MORE", "LESS", "REVERSE"],
+    "applicable_parameters": ["Flow", "Pressure", "Speed"],
+    "deviations": {
+      "NO_FLOW": {
+        "common_causes": [
+          "Pump motor failure or trip",
+          "Suction strainer blocked",
+          "Cavitation due to low NPSH",
+          "Impeller damage or wear",
+          "Suction or discharge valve closed"
+        ],
+        "common_consequences": [
+          "Loss of feed to downstream equipment",
+          "Pump seal overheating and failure",
+          "Deadheading causing mechanical damage",
+          "Process upset downstream"
+        ],
+        "standard_safeguards": [
+          "Low flow alarm",
+          "Pump minimum flow bypass (recirculation line)",
+          "Standby pump with auto-start",
+          "Vibration monitoring",
+          "Motor overload protection"
+        ]
+      },
+      "MORE_PRESSURE": {
+        "common_causes": [
+          "Discharge valve closed or downstream blockage",
+          "Higher fluid density than design",
+          "Pump running at higher speed than design"
+        ],
+        "common_consequences": [
+          "Overpressure of discharge piping",
+          "Mechanical seal failure and leak",
+          "Motor overload trip",
+          "Pipe flange leak at high pressure"
+        ],
+        "standard_safeguards": [
+          "High pressure alarm on discharge",
+          "PSV on pump discharge",
+          "Motor overload protection",
+          "Pressure-rated piping"
+        ]
+      },
+      "REVERSE_FLOW": {
+        "common_causes": [
+          "Pump trip with no check valve",
+          "Standby pump started against running pump",
+          "Siphon effect from downstream elevation"
+        ],
+        "common_consequences": [
+          "Reverse rotation causing mechanical damage",
+          "Backflow contaminating upstream vessel",
+          "Water hammer in piping"
+        ],
+        "standard_safeguards": [
+          "Check valve on pump discharge",
+          "Non-return valve",
+          "Anti-reverse rotation device"
+        ]
+      },
+      "LESS_FLOW": {
+        "common_causes": [
+          "Partial suction strainer blockage",
+          "Impeller wear",
+          "Air entrainment in suction",
+          "Increased system resistance"
+        ],
+        "common_consequences": [
+          "Reduced throughput",
+          "Downstream process upset",
+          "Pump overheating",
+          "Cavitation damage"
+        ],
+        "standard_safeguards": [
+          "Flow monitoring and low alarm",
+          "Suction pressure monitoring",
+          "Regular performance testing",
+          "Vibration monitoring"
+        ]
+      }
+    }
+  },
+  "compressor": {
+    "applicable_guide_words": ["NO", "MORE", "LESS", "REVERSE"],
+    "applicable_parameters": ["Flow", "Pressure", "Temperature", "Speed"],
+    "deviations": {
+      "NO_FLOW": {
+        "common_causes": [
+          "Motor/driver failure",
+          "Suction filter blocked",
+          "Surge condition",
+          "Inlet guide vanes stuck closed"
+        ],
+        "common_consequences": [
+          "Loss of gas supply to process",
+          "Compressor overheating",
+          "Downstream pressure decay",
+          "Flare system activation"
+        ],
+        "standard_safeguards": [
+          "Anti-surge control system",
+          "Standby compressor",
+          "Low suction pressure trip",
+          "Vibration monitoring and trip"
+        ]
+      },
+      "MORE_PRESSURE": {
+        "common_causes": [
+          "Discharge blockage",
+          "Downstream valve closure",
+          "Higher molecular weight gas than design",
+          "Anti-surge valve failure"
+        ],
+        "common_consequences": [
+          "Compressor discharge overpressure",
+          "Mechanical seal failure",
+          "Motor overload",
+          "Piping stress and potential leak"
+        ],
+        "standard_safeguards": [
+          "High discharge pressure alarm and trip",
+          "PSV on discharge",
+          "Anti-surge system",
+          "Motor overload protection"
+        ]
+      },
+      "MORE_TEMPERATURE": {
+        "common_causes": [
+          "Intercooler failure",
+          "Higher compression ratio than design",
+          "Low lube oil flow",
+          "Fouled internal passages"
+        ],
+        "common_consequences": [
+          "Bearing failure",
+          "Seal degradation and gas leak",
+          "Auto-ignition risk for flammable gases",
+          "Compressor damage"
+        ],
+        "standard_safeguards": [
+          "Discharge temperature alarm and trip",
+          "Bearing temperature monitoring",
+          "Lube oil temperature and pressure monitoring",
+          "Intercooler outlet temperature monitoring"
+        ]
+      },
+      "REVERSE_FLOW": {
+        "common_causes": [
+          "Compressor trip without check valve closure",
+          "Surge event",
+          "Discharge pressure higher than suction on startup"
+        ],
+        "common_consequences": [
+          "Reverse rotation and mechanical damage",
+          "Overspeed condition",
+          "Process gas backflow to suction system"
+        ],
+        "standard_safeguards": [
+          "Check valve on discharge",
+          "Anti-surge control",
+          "Startup/shutdown procedures",
+          "Reverse rotation protection"
+        ]
+      }
+    }
+  },
+  "storage_tank": {
+    "applicable_guide_words": ["NO", "MORE", "LESS", "AS WELL AS", "OTHER THAN"],
+    "applicable_parameters": ["Flow", "Level", "Temperature", "Pressure", "Composition"],
+    "deviations": {
+      "MORE_LEVEL": {
+        "common_causes": [
+          "Operator error during filling",
+          "Level instrument failure",
+          "Outlet pump trip during filling",
+          "Incorrect tank gauging",
+          "Simultaneous filling from multiple sources"
+        ],
+        "common_consequences": [
+          "Tank overflow and ground contamination",
+          "Environmental pollution",
+          "Fire/explosion if flammable material",
+          "Structural damage (roof lifting on floating roof tanks)"
+        ],
+        "standard_safeguards": [
+          "High level alarm",
+          "High-high level trip (shuts inlet valve)",
+          "Independent overflow detection",
+          "Bund/containment wall",
+          "Operator rounds and manual gauging"
+        ]
+      },
+      "LESS_LEVEL": {
+        "common_causes": [
+          "Tank leak (corrosion, mechanical damage)",
+          "Excessive withdrawal rate",
+          "Level instrument failure showing false high",
+          "Drain valve left open after maintenance"
+        ],
+        "common_consequences": [
+          "Loss of containment and environmental impact",
+          "Pump cavitation on tank outlet",
+          "Loss of supply to downstream process",
+          "Tank collapse (vacuum on enclosed tanks)"
+        ],
+        "standard_safeguards": [
+          "Low level alarm",
+          "Leak detection system",
+          "Tank inspection program",
+          "Vacuum relief valve"
+        ]
+      },
+      "MORE_TEMPERATURE": {
+        "common_causes": [
+          "Solar radiation on uninsulated tank",
+          "Adjacent fire exposure",
+          "Exothermic reaction in stored material",
+          "Hot transfer into cold tank"
+        ],
+        "common_consequences": [
+          "Increased vapor pressure and emissions",
+          "Tank breathing losses",
+          "Potential boilover for water-containing hydrocarbons",
+          "Material degradation"
+        ],
+        "standard_safeguards": [
+          "Temperature monitoring",
+          "Tank painting/insulation",
+          "Fire protection systems (foam, water spray)",
+          "Vapor recovery system"
+        ]
+      },
+      "AS_WELL_AS_COMPOSITION": {
+        "common_causes": [
+          "Wrong material delivered to tank",
+          "Cross-contamination from shared pipework",
+          "Water ingress from rain or condensation",
+          "Corrosion products"
+        ],
+        "common_consequences": [
+          "Chemical reaction with stored material",
+          "Product quality failure",
+          "Corrosion of tank internals",
+          "Hazardous gas generation"
+        ],
+        "standard_safeguards": [
+          "Material receiving procedures",
+          "Sample analysis before acceptance",
+          "Dedicated unloading connections",
+          "Drain and inspection procedures"
+        ]
+      }
+    }
+  },
+  "valve": {
+    "applicable_guide_words": ["NO", "MORE", "LESS", "REVERSE", "OTHER THAN"],
+    "applicable_parameters": ["Flow", "Pressure"],
+    "deviations": {
+      "NO_FLOW": {
+        "common_causes": [
+          "Valve fails closed",
+          "Valve stem broken",
+          "Packing leak causing loss of actuator pressure",
+          "Debris stuck in valve seat",
+          "Incorrect valve position after maintenance"
+        ],
+        "common_consequences": [
+          "Loss of flow to downstream equipment",
+          "Upstream pressure buildup",
+          "Process interruption",
+          "Potential deadheading of upstream pump"
+        ],
+        "standard_safeguards": [
+          "Valve position indication (open/closed)",
+          "Bypass valve for critical service",
+          "Fail-safe actuator design",
+          "Valve maintenance program"
+        ]
+      },
+      "MORE_FLOW": {
+        "common_causes": [
+          "Control valve fails open",
+          "Valve sizing error",
+          "Upstream pressure increase",
+          "Erosion of valve trim"
+        ],
+        "common_consequences": [
+          "Flooding of downstream vessel",
+          "Overpressure downstream",
+          "Process upset and off-spec product",
+          "Erosion damage to piping"
+        ],
+        "standard_safeguards": [
+          "Flow measurement downstream",
+          "Control valve fail-safe position",
+          "PSV downstream",
+          "High level/pressure alarms downstream"
+        ]
+      },
+      "REVERSE_FLOW": {
+        "common_causes": [
+          "Check valve failure",
+          "Pressure reversal",
+          "Incorrect piping installation"
+        ],
+        "common_consequences": [
+          "Backflow contamination",
+          "Equipment damage",
+          "Process upset"
+        ],
+        "standard_safeguards": [
+          "Check valves",
+          "Double block and bleed arrangements",
+          "Pressure monitoring"
+        ]
+      }
+    }
+  },
+  "pipeline": {
+    "applicable_guide_words": ["NO", "MORE", "LESS", "REVERSE", "AS WELL AS"],
+    "applicable_parameters": ["Flow", "Pressure", "Temperature", "Composition"],
+    "deviations": {
+      "NO_FLOW": {
+        "common_causes": [
+          "Line blockage (hydrate formation, wax deposition, scale)",
+          "Valve left closed",
+          "Pipe rupture and isolation",
+          "Pump trip upstream"
+        ],
+        "common_consequences": [
+          "Loss of supply to destination",
+          "Pipeline pressure surge (water hammer)",
+          "Temperature deviation (stagnant fluid cooling)",
+          "Process shutdown"
+        ],
+        "standard_safeguards": [
+          "Flow monitoring",
+          "Pig launchers for cleaning",
+          "Line insulation and heat tracing",
+          "Valve position monitoring"
+        ]
+      },
+      "MORE_PRESSURE": {
+        "common_causes": [
+          "Thermal expansion in blocked-in section",
+          "Pressure surge (water hammer)",
+          "Downstream valve closure",
+          "Higher density fluid than design"
+        ],
+        "common_consequences": [
+          "Pipe rupture and loss of containment",
+          "Flange leak",
+          "Environmental contamination",
+          "Fire/explosion if flammable"
+        ],
+        "standard_safeguards": [
+          "PSV on dead-legs and blocked-in sections",
+          "Thermal relief valves",
+          "Pressure-rated piping per ASME B31.3",
+          "Surge analysis during design"
+        ]
+      },
+      "LESS_TEMPERATURE": {
+        "common_causes": [
+          "Loss of heat tracing",
+          "Insulation damage",
+          "Ambient temperature drop",
+          "Reduced flow rate"
+        ],
+        "common_consequences": [
+          "Fluid solidification or hydrate formation",
+          "Blockage",
+          "Brittle fracture risk (carbon steel)",
+          "Increased viscosity"
+        ],
+        "standard_safeguards": [
+          "Heat tracing with monitoring",
+          "Insulation maintenance program",
+          "Low temperature alarms",
+          "Material selection for minimum design temperature"
+        ]
+      },
+      "AS_WELL_AS_COMPOSITION": {
+        "common_causes": [
+          "Corrosion products",
+          "Water accumulation",
+          "Cross-contamination from tie-in points",
+          "Bacteria growth (MIC - microbiologically influenced corrosion)"
+        ],
+        "common_consequences": [
+          "Internal corrosion and wall thinning",
+          "Product contamination",
+          "Blockage from deposits",
+          "Hydrate or ice formation"
+        ],
+        "standard_safeguards": [
+          "Corrosion monitoring (coupons, UT measurements)",
+          "Chemical injection (inhibitors, biocides)",
+          "Pigging program",
+          "Material selection and corrosion allowance"
+        ]
+      }
+    }
+  },
+  "separator": {
+    "applicable_guide_words": ["NO", "MORE", "LESS", "AS WELL AS"],
+    "applicable_parameters": ["Flow", "Level", "Pressure", "Temperature", "Composition"],
+    "deviations": {
+      "MORE_LEVEL": {
+        "common_causes": [
+          "Liquid outlet valve blocked or closed",
+          "Level controller failure",
+          "Emulsion formation preventing separation",
+          "Slug flow from upstream"
+        ],
+        "common_consequences": [
+          "Liquid carryover to gas outlet",
+          "Damage to downstream compressor or gas equipment",
+          "Loss of separation efficiency",
+          "Overpressure"
+        ],
+        "standard_safeguards": [
+          "High level alarm and trip",
+          "Independent high-high level switch",
+          "Demister or mist eliminator",
+          "Slug catcher upstream"
+        ]
+      },
+      "LESS_LEVEL": {
+        "common_causes": [
+          "Excessive liquid withdrawal",
+          "Feed flow interruption",
+          "Level controller failure",
+          "Drain valve left open"
+        ],
+        "common_consequences": [
+          "Gas blowby through liquid outlet",
+          "Loss of liquid seal",
+          "Gas entering liquid system (flammability hazard)",
+          "Downstream pump cavitation"
+        ],
+        "standard_safeguards": [
+          "Low level alarm",
+          "Low-low level trip (closes liquid outlet or shuts down pump)",
+          "Gas detection on liquid lines downstream"
+        ]
+      },
+      "MORE_PRESSURE": {
+        "common_causes": [
+          "Gas outlet blockage",
+          "Higher inlet pressure than design",
+          "Inadequate pressure control",
+          "Relief valve plugged"
+        ],
+        "common_consequences": [
+          "Vessel overpressure",
+          "Mechanical failure",
+          "Release of hydrocarbons",
+          "Reduced separation efficiency"
+        ],
+        "standard_safeguards": [
+          "PSV",
+          "High pressure alarm and trip",
+          "Pressure control valve on gas outlet",
+          "Emergency depressurization"
+        ]
+      },
+      "AS_WELL_AS_COMPOSITION": {
+        "common_causes": [
+          "Sand or solids in feed",
+          "H2S or CO2 content higher than expected",
+          "Produced water chemistry changes",
+          "Upstream chemical injection upset"
+        ],
+        "common_consequences": [
+          "Erosion of internals",
+          "Corrosion",
+          "Foaming preventing separation",
+          "Off-spec product"
+        ],
+        "standard_safeguards": [
+          "Sand detection and removal system",
+          "Corrosion monitoring",
+          "Anti-foam injection",
+          "Sampling and analysis program"
+        ]
+      }
+    }
+  },
+  "furnace": {
+    "applicable_guide_words": ["NO", "MORE", "LESS", "OTHER THAN"],
+    "applicable_parameters": ["Flow", "Temperature", "Pressure", "Composition"],
+    "deviations": {
+      "NO_FLOW": {
+        "common_causes": [
+          "Process feed pump failure",
+          "Tube rupture causing loss of inventory",
+          "Blocked tube (coking)",
+          "Isolation for emergency"
+        ],
+        "common_consequences": [
+          "Tube overheating and rupture (dry firing)",
+          "Fire inside firebox from released hydrocarbons",
+          "Explosion if unburned fuel accumulates",
+          "Major equipment damage"
+        ],
+        "standard_safeguards": [
+          "Low flow trip (shuts fuel gas)",
+          "Tube metal temperature monitoring (TMTs)",
+          "Snuffing steam system",
+          "Firebox explosion-proof design",
+          "Emergency shutdown system"
+        ]
+      },
+      "MORE_TEMPERATURE": {
+        "common_causes": [
+          "Fuel gas control valve fails open",
+          "Loss of process flow (partial)",
+          "Flame impingement from damaged burner",
+          "Coking causing hot spots"
+        ],
+        "common_consequences": [
+          "Tube failure from overheating",
+          "Firebox fire",
+          "Product cracking and coking",
+          "Structural damage",
+          "Major safety incident"
+        ],
+        "standard_safeguards": [
+          "High tube temperature alarm and trip",
+          "High stack temperature alarm",
+          "Fuel gas shutoff on multiple safety trips",
+          "Fire detection in firebox",
+          "Tube inspection program"
+        ]
+      },
+      "LESS_FLOW": {
+        "common_causes": [
+          "Partial tube blockage (coking)",
+          "Pump degradation",
+          "Flow maldistribution in multipass design",
+          "Control valve hunting"
+        ],
+        "common_consequences": [
+          "Uneven heating and hot spots",
+          "Accelerated coking",
+          "Tube failure",
+          "Reduced throughput"
+        ],
+        "standard_safeguards": [
+          "Individual pass flow monitoring",
+          "Tube metal temperature monitoring",
+          "Regular decoking schedule",
+          "Flow balancing controls"
+        ]
+      },
+      "OTHER_THAN_COMPOSITION": {
+        "common_causes": [
+          "Fuel gas composition change (higher heating value)",
+          "Liquid carryover into fuel gas",
+          "Air ingress into fuel system",
+          "Contaminated process feed"
+        ],
+        "common_consequences": [
+          "Flame instability or flameout",
+          "Explosion from unburned fuel-air mixture",
+          "Uneven heating",
+          "Emissions exceedance",
+          "Tube corrosion from contaminants"
+        ],
+        "standard_safeguards": [
+          "Fuel gas KO drum",
+          "Flame monitoring (UV/IR detectors)",
+          "Fuel gas quality monitoring",
+          "Purge cycle requirements before light-off",
+          "Combustible gas detection"
+        ]
+      }
+    }
+  }
+}

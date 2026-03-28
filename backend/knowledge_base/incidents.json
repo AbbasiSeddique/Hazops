@@ -1,0 +1,565 @@
+{
+  "incidents": [
+    {
+      "id": "INC-001",
+      "title": "BP Texas City Refinery Explosion",
+      "date": "2005-03-23",
+      "location": "Texas City, Texas, USA",
+      "equipment_types": ["distillation_column", "furnace", "storage_tank"],
+      "failure_modes": ["overfill", "high level", "loss of containment", "vapor cloud explosion"],
+      "deviation_categories": ["MORE Level", "NO Flow", "MORE Pressure"],
+      "consequences": "15 fatalities, 180+ injuries, $1.5 billion in financial losses",
+      "root_causes": [
+        "Raffinate splitter tower overfilled during startup",
+        "Blowdown drum and stack inadequate for relieving liquid overflow",
+        "Lack of level indication in the tower",
+        "Cost-cutting on maintenance and safety",
+        "Failure of corporate safety culture",
+        "Inadequate operator training for startup procedures"
+      ],
+      "lessons_learned": [
+        "Inherently safer design should be used for blowdown systems",
+        "Occupied buildings must be located away from hazardous process units",
+        "Corporate safety culture must be driven from the top with adequate resources",
+        "Startup procedures require enhanced monitoring and staffing",
+        "Independent high-level protection is critical for distillation columns",
+        "Process safety indicators must be tracked and acted upon"
+      ],
+      "source": "CSB Investigation Report No. 2005-04-I-TX"
+    },
+    {
+      "id": "INC-002",
+      "title": "Bhopal Union Carbide Gas Tragedy",
+      "date": "1984-12-03",
+      "location": "Bhopal, Madhya Pradesh, India",
+      "equipment_types": ["storage_tank", "reactor", "pipeline"],
+      "failure_modes": ["exothermic reaction", "overpressure", "toxic release", "loss of containment"],
+      "deviation_categories": ["AS WELL AS Composition", "MORE Temperature", "MORE Pressure"],
+      "consequences": "Estimated 3,800+ immediate deaths, over 15,000 subsequent deaths, 500,000+ exposed",
+      "root_causes": [
+        "Water contamination of methyl isocyanate (MIC) storage tank",
+        "Exothermic reaction causing rapid pressure rise",
+        "Multiple safety systems disabled or non-functional (refrigeration, scrubber, flare)",
+        "Inadequate maintenance and cost-cutting",
+        "Understaffing and inadequate training",
+        "Storage of excessive MIC inventory beyond safe limits"
+      ],
+      "lessons_learned": [
+        "Minimize inventory of highly hazardous materials (inherently safer design)",
+        "Safety systems must never be disabled while hazardous materials are present",
+        "Multiple independent layers of protection are essential for toxic materials",
+        "Community emergency planning and notification systems are critical",
+        "Regular testing and maintenance of all safety systems is non-negotiable",
+        "Process safety management systems must be robust and enforced"
+      ],
+      "source": "Various investigations including Indian government and UCC reports"
+    },
+    {
+      "id": "INC-003",
+      "title": "Piper Alpha Platform Disaster",
+      "date": "1988-07-06",
+      "location": "North Sea, UK",
+      "equipment_types": ["compressor", "pipeline", "separator", "pump"],
+      "failure_modes": ["gas leak", "fire", "explosion", "structural collapse"],
+      "deviation_categories": ["NO Flow", "AS WELL AS Composition", "MORE Pressure"],
+      "consequences": "167 fatalities, platform destroyed, $3.4 billion losses",
+      "root_causes": [
+        "Condensate pump started without awareness that PSV had been removed for maintenance",
+        "Permit to work system failures and poor shift handover",
+        "Gas leak from open PSV flange ignited",
+        "Fire escalation due to lack of firewall between modules",
+        "Failure to shut down interconnected pipelines from other platforms",
+        "Emergency response failures and inadequate evacuation"
+      ],
+      "lessons_learned": [
+        "Permit to work systems must ensure clear communication between shifts",
+        "Temporary deferrals of safety equipment must be rigorously controlled",
+        "Fire and blast walls between process modules are essential",
+        "Emergency shutdown must include isolation of all interconnected facilities",
+        "Safety cases (now required by UK regulation) must demonstrate adequate risk management",
+        "Temporary refuge design and evacuation routes must consider worst-case scenarios"
+      ],
+      "source": "Cullen Report - Public Inquiry into Piper Alpha Disaster"
+    },
+    {
+      "id": "INC-004",
+      "title": "Deepwater Horizon Blowout and Oil Spill",
+      "date": "2010-04-20",
+      "location": "Gulf of Mexico, USA",
+      "equipment_types": ["pipeline", "separator", "valve", "compressor"],
+      "failure_modes": ["blowout", "gas migration", "explosion", "fire", "loss of well control"],
+      "deviation_categories": ["MORE Pressure", "MORE Flow", "AS WELL AS Composition"],
+      "consequences": "11 fatalities, 17 injuries, 4.9 million barrels of oil spilled, $65 billion in costs",
+      "root_causes": [
+        "Failure to recognize and respond to well control indicators (kick)",
+        "Cement job failed to seal the well",
+        "Negative pressure test misinterpreted",
+        "Blowout preventer (BOP) failed to seal the well",
+        "Management decisions prioritizing schedule over safety",
+        "Inadequate risk assessment of well design changes"
+      ],
+      "lessons_learned": [
+        "Well barrier verification must be rigorous and independently checked",
+        "Blowout preventers must be properly maintained and tested",
+        "Multiple independent well barriers are essential",
+        "Corporate culture must prioritize safety over schedule pressure",
+        "Real-time monitoring and response capabilities are critical",
+        "Emergency preparedness for worst-case scenarios must be validated"
+      ],
+      "source": "National Commission Report and CSB Investigation"
+    },
+    {
+      "id": "INC-005",
+      "title": "Flixborough Nypro Explosion",
+      "date": "1974-06-01",
+      "location": "Flixborough, North Lincolnshire, UK",
+      "equipment_types": ["reactor", "pipeline"],
+      "failure_modes": ["pipe rupture", "vapor cloud explosion", "loss of containment"],
+      "deviation_categories": ["MORE Pressure", "MORE Temperature", "OTHER THAN Flow"],
+      "consequences": "28 fatalities, 36 injuries, plant destroyed",
+      "root_causes": [
+        "Temporary bypass pipe installed without proper engineering assessment",
+        "Bypass pipe failed due to inadequate design (bellows, dog-leg configuration)",
+        "No management of change process for temporary modification",
+        "Reactor 5 removed for repair without adequate temporary design review",
+        "Cyclohexane release formed massive vapor cloud that ignited"
+      ],
+      "lessons_learned": [
+        "Management of change (MOC) procedures are essential for any modification",
+        "Temporary repairs and bypasses require full engineering review",
+        "Inherently safer design - minimize inventory of flammable materials",
+        "Plant siting and occupied building location relative to process units",
+        "The importance of mechanical integrity programs"
+      ],
+      "source": "Court of Inquiry Report (Parker Report)"
+    },
+    {
+      "id": "INC-006",
+      "title": "Seveso ICMESA Dioxin Release",
+      "date": "1976-07-10",
+      "location": "Seveso, Lombardy, Italy",
+      "equipment_types": ["reactor", "storage_tank"],
+      "failure_modes": ["thermal runaway", "overpressure", "toxic release"],
+      "deviation_categories": ["MORE Temperature", "MORE Pressure", "OTHER THAN Composition"],
+      "consequences": "Widespread dioxin (TCDD) contamination, mass evacuation, long-term health effects",
+      "root_causes": [
+        "Exothermic reaction runaway in TCP reactor after shutdown",
+        "Reactor left at elevated temperature without agitation",
+        "Inadequate understanding of reaction kinetics at higher temperatures",
+        "Safety valve released reactor contents to atmosphere (no containment)",
+        "No emergency plan for toxic release"
+      ],
+      "lessons_learned": [
+        "Thorough understanding of reaction kinetics including runaway scenarios",
+        "Safety relief systems must discharge to safe containment",
+        "Emergency shutdown procedures must address residual heat management",
+        "Led directly to the EU Seveso Directive for industrial safety regulation",
+        "Community notification and emergency planning requirements"
+      ],
+      "source": "Various scientific and regulatory investigations"
+    },
+    {
+      "id": "INC-007",
+      "title": "Phillips 66 Houston Polyethylene Plant Explosion",
+      "date": "1989-10-23",
+      "location": "Pasadena, Texas, USA",
+      "equipment_types": ["reactor", "pipeline", "valve", "separator"],
+      "failure_modes": ["loss of containment", "vapor cloud explosion", "maintenance error"],
+      "deviation_categories": ["NO Flow", "MORE Pressure", "AS WELL AS Composition"],
+      "consequences": "23 fatalities, 314 injuries, $1.5 billion in property damage",
+      "root_causes": [
+        "Maintenance being performed on polyethylene reactor settling leg while reactor was in operation",
+        "Air hoses connected to leg isolation valves were crossed (opened instead of closed)",
+        "Massive release of ethylene, isobutane, and hydrogen",
+        "Vapor cloud ignited within seconds",
+        "Inadequate lockout/tagout procedures",
+        "Contractor management deficiencies"
+      ],
+      "lessons_learned": [
+        "Lockout/tagout procedures must be rigorously followed and verified",
+        "Maintenance on equipment containing hydrocarbons requires positive isolation",
+        "Contractor safety management must be equivalent to in-house standards",
+        "Pre-startup safety reviews are essential before returning to operation",
+        "OSHA PSM regulation development accelerated by this incident"
+      ],
+      "source": "OSHA Investigation Report"
+    },
+    {
+      "id": "INC-008",
+      "title": "Esso Longford Gas Plant Explosion",
+      "date": "1998-09-25",
+      "location": "Longford, Victoria, Australia",
+      "equipment_types": ["heat_exchanger", "separator", "pipeline"],
+      "failure_modes": ["metal embrittlement", "heat exchanger failure", "gas release", "explosion"],
+      "deviation_categories": ["LESS Temperature", "NO Flow", "MORE Pressure"],
+      "consequences": "2 fatalities, 8 injuries, gas supply to Melbourne cut for 2 weeks",
+      "root_causes": [
+        "Loss of hot lean oil flow to GP1 absorber caused temperature drop",
+        "Extreme cold caused brittle fracture of heat exchanger vessel",
+        "Operators not trained on cold temperature hazards",
+        "HAZOP study had identified the scenario but recommendations not implemented",
+        "Warm oil introduced to cold vessel caused thermal shock and rupture"
+      ],
+      "lessons_learned": [
+        "HAZOP recommendations must be tracked to closure",
+        "Operators must understand process hazards, not just procedures",
+        "Material selection must consider all possible operating conditions including upsets",
+        "Brittle fracture risks from low temperature operation must be assessed",
+        "The importance of following through on safety study findings"
+      ],
+      "source": "Royal Commission Report (Dawson Report)"
+    },
+    {
+      "id": "INC-009",
+      "title": "T2 Laboratories Reactor Explosion",
+      "date": "2007-12-19",
+      "location": "Jacksonville, Florida, USA",
+      "equipment_types": ["reactor"],
+      "failure_modes": ["thermal runaway", "overpressure", "explosion"],
+      "deviation_categories": ["MORE Temperature", "MORE Pressure", "LESS Flow"],
+      "consequences": "4 fatalities, 32 injuries, facility destroyed",
+      "root_causes": [
+        "Runaway exothermic reaction during methylcyclopentadienyl manganese tricarbonyl production",
+        "Cooling system unable to remove heat from unexpected exothermic decomposition",
+        "Reactor pressure exceeded burst pressure of rupture disc",
+        "Inadequate understanding of process chemistry and reaction hazards",
+        "No reactive chemistry hazard analysis performed",
+        "PSV/rupture disc undersized for runaway scenario"
+      ],
+      "lessons_learned": [
+        "Reactive hazard analysis (e.g., DIERS methodology) essential for batch reactions",
+        "Relief systems must be sized for runaway reaction scenarios, not just normal operation",
+        "Calorimetric testing (ARC, DSC) should characterize all reaction hazards",
+        "Small companies need access to process safety expertise",
+        "Inherently safer design: consider continuous vs. batch processing"
+      ],
+      "source": "CSB Investigation Report No. 2008-3-I-FL"
+    },
+    {
+      "id": "INC-010",
+      "title": "Imperial Sugar Refinery Dust Explosion",
+      "date": "2008-02-07",
+      "location": "Port Wentworth, Georgia, USA",
+      "equipment_types": ["storage_tank", "pipeline", "compressor"],
+      "failure_modes": ["dust explosion", "fire", "structural collapse"],
+      "deviation_categories": ["AS WELL AS Composition", "OTHER THAN Composition", "MORE Temperature"],
+      "consequences": "14 fatalities, 38 injuries",
+      "root_causes": [
+        "Massive accumulations of combustible sugar dust throughout the facility",
+        "Enclosed conveyor belts created confined spaces with dust accumulation",
+        "Steel covers on conveyor belts replaced original open design, allowing dust buildup",
+        "Inadequate housekeeping standards",
+        "No combustible dust hazard analysis performed",
+        "Management failure to address known dust accumulation issues"
+      ],
+      "lessons_learned": [
+        "Combustible dust hazard analysis is essential for any facility handling powders",
+        "Housekeeping programs must prevent dust accumulation on all surfaces",
+        "Enclosing equipment can increase dust explosion risk",
+        "NFPA 652 and 654 standards for combustible dust must be followed",
+        "Management must prioritize dust control as a safety-critical activity"
+      ],
+      "source": "CSB Investigation Report No. 2008-05-I-GA"
+    },
+    {
+      "id": "INC-011",
+      "title": "Chevron Richmond Refinery Fire",
+      "date": "2012-08-06",
+      "location": "Richmond, California, USA",
+      "equipment_types": ["pipeline", "heat_exchanger", "furnace"],
+      "failure_modes": ["pipe rupture", "fire", "corrosion", "loss of containment"],
+      "deviation_categories": ["LESS Pressure", "AS WELL AS Composition", "MORE Temperature"],
+      "consequences": "No fatalities, 15,000+ community members sought medical treatment for respiratory issues",
+      "root_causes": [
+        "Carbon steel piping in crude unit side-cut circuit suffered sulfidation corrosion",
+        "Pipe wall thinning went undetected due to inadequate inspection",
+        "Company had identified the corrosion risk 10 years prior but failed to replace piping",
+        "Operators attempted to isolate the leak but pipe ruptured catastrophically",
+        "Hydrocarbon vapor cloud engulfed 19 workers who narrowly escaped"
+      ],
+      "lessons_learned": [
+        "Damage mechanism reviews must be thorough and acted upon",
+        "High-temperature sulfidation requires upgraded materials (Cr-Mo steels)",
+        "Inspection programs must use appropriate methods for the damage mechanism",
+        "Process safety culture must drive timely replacement of degraded equipment",
+        "Inherently safer design: upgrade metallurgy rather than manage corrosion"
+      ],
+      "source": "CSB Investigation Report No. 2012-03-I-CA"
+    },
+    {
+      "id": "INC-012",
+      "title": "DuPont La Porte Methyl Mercaptan Release",
+      "date": "2014-11-15",
+      "location": "La Porte, Texas, USA",
+      "equipment_types": ["pipeline", "valve", "reactor"],
+      "failure_modes": ["toxic release", "valve failure", "ventilation failure"],
+      "deviation_categories": ["MORE Flow", "AS WELL AS Composition", "OTHER THAN Flow"],
+      "consequences": "4 fatalities from methyl mercaptan and hydrogen sulfide exposure",
+      "root_causes": [
+        "Workers entered enclosed space with toxic methyl mercaptan without adequate PPE",
+        "Valve leaked allowing toxic material into the space",
+        "Building ventilation system was not operating",
+        "Ineffective gas detection and alarm systems",
+        "Inadequate safe work practices and hazard recognition",
+        "Management of change deficiencies for building modifications"
+      ],
+      "lessons_learned": [
+        "Enclosed spaces with toxic materials require robust ventilation and gas detection",
+        "PPE requirements must be enforced for areas with toxic exposure potential",
+        "Gas detection systems must be properly designed, maintained, and tested",
+        "Confined space and toxic atmosphere entry procedures must be followed",
+        "Building siting and ventilation are critical safety considerations"
+      ],
+      "source": "CSB Investigation Report No. 2015-01-I-TX"
+    },
+    {
+      "id": "INC-013",
+      "title": "West Fertilizer Company Explosion",
+      "date": "2013-04-17",
+      "location": "West, Texas, USA",
+      "equipment_types": ["storage_tank"],
+      "failure_modes": ["fire", "detonation", "ammonium nitrate explosion"],
+      "deviation_categories": ["MORE Temperature", "AS WELL AS Composition", "OTHER THAN Composition"],
+      "consequences": "15 fatalities (12 first responders), 160+ injuries, 150 buildings damaged",
+      "root_causes": [
+        "Fire in or near ammonium nitrate storage building",
+        "Massive ammonium nitrate inventory stored in wooden bins",
+        "No fire suppression system in storage area",
+        "Inadequate separation distances from community",
+        "Regulatory gaps - facility not properly inspected or regulated",
+        "First responders not aware of detonation potential"
+      ],
+      "lessons_learned": [
+        "Ammonium nitrate storage requires strict compliance with NFPA 400",
+        "Community siting and separation distances are critical for reactive materials",
+        "Fire suppression must be provided for reactive chemical storage",
+        "Emergency responders need information about chemicals stored at facilities",
+        "Regulatory oversight must identify and inspect high-hazard facilities"
+      ],
+      "source": "CSB Investigation Report No. 2013-02-I-TX"
+    },
+    {
+      "id": "INC-014",
+      "title": "Formosa Plastics Illiopolis PVC Explosion",
+      "date": "2004-04-23",
+      "location": "Illiopolis, Illinois, USA",
+      "equipment_types": ["reactor", "pipeline", "valve"],
+      "failure_modes": ["runaway reaction", "explosion", "VCM release"],
+      "deviation_categories": ["MORE Temperature", "MORE Pressure", "AS WELL AS Composition"],
+      "consequences": "5 fatalities, 3 injuries, reactor building destroyed",
+      "root_causes": [
+        "Vinyl chloride monomer (VCM) leaked past isolation valve and entered reactor during cleaning",
+        "VCM initiated uncontrolled polymerization",
+        "Reactor overpressure from exothermic reaction",
+        "Isolation valve was known to leak but not repaired",
+        "Cleaning procedure did not account for possibility of VCM ingress",
+        "No safe work analysis for the non-routine cleaning operation"
+      ],
+      "lessons_learned": [
+        "Positive isolation (double block and bleed) essential when working on reactive systems",
+        "Known leaking valves must be repaired before allowing personnel entry",
+        "Non-routine operations require specific hazard analysis (job safety analysis)",
+        "Reactive chemicals require strict isolation from personnel during maintenance"
+      ],
+      "source": "CSB Investigation Report No. 2004-10-I-IL"
+    },
+    {
+      "id": "INC-015",
+      "title": "Tesoro Anacortes Refinery Catastrophic Heat Exchanger Failure",
+      "date": "2010-04-02",
+      "location": "Anacortes, Washington, USA",
+      "equipment_types": ["heat_exchanger"],
+      "failure_modes": ["catastrophic rupture", "high temperature hydrogen attack", "fire"],
+      "deviation_categories": ["MORE Temperature", "MORE Pressure", "LESS Flow"],
+      "consequences": "7 fatalities",
+      "root_causes": [
+        "Heat exchanger suffered high temperature hydrogen attack (HTHA) causing embrittlement",
+        "Equipment operated beyond Nelson Curve limits for carbon steel",
+        "HTHA damage not detectable by standard inspection methods",
+        "API 941 guidance not properly applied to determine HTHA susceptibility",
+        "Equipment had been in HTHA-susceptible service for decades"
+      ],
+      "lessons_learned": [
+        "HTHA screening per API 941 must be performed for all hydrogen service equipment",
+        "Carbon steel limitations in hydrogen service must be understood and respected",
+        "Advanced inspection techniques (AUBT, TOFD) needed for HTHA detection",
+        "Consider upgrading metallurgy to Cr-Mo steels for hydrogen service",
+        "Damage mechanism reviews must include HTHA for all relevant equipment"
+      ],
+      "source": "CSB Investigation Report No. 2010-08-I-WA"
+    },
+    {
+      "id": "INC-016",
+      "title": "Hickson & Welch Castleford Reactor Explosion",
+      "date": "1992-09-21",
+      "location": "Castleford, West Yorkshire, UK",
+      "equipment_types": ["reactor"],
+      "failure_modes": ["thermal runaway", "overpressure", "explosion"],
+      "deviation_categories": ["MORE Temperature", "MORE Pressure", "LESS Flow"],
+      "consequences": "5 fatalities, plant severely damaged",
+      "root_causes": [
+        "Runaway reaction during nitrotoluene production",
+        "Cooling failure combined with continued addition of reactant",
+        "Agitator failure led to stratification and sudden mixing",
+        "Inadequate emergency venting capacity",
+        "Insufficient understanding of thermal stability"
+      ],
+      "lessons_learned": [
+        "Reactive chemistry assessments essential for nitration processes",
+        "Emergency relief sizing must account for worst-case runaway",
+        "Agitator failure detection and automatic feed shutoff required",
+        "Calorimetric studies must be performed for reactive processes",
+        "HAZOP should specifically address agitation failure scenarios"
+      ],
+      "source": "HSE Investigation Report"
+    },
+    {
+      "id": "INC-017",
+      "title": "Varanus Island Gas Pipeline Rupture",
+      "date": "2008-06-03",
+      "location": "Varanus Island, Western Australia",
+      "equipment_types": ["pipeline", "separator"],
+      "failure_modes": ["corrosion", "pipe rupture", "gas release", "fire"],
+      "deviation_categories": ["LESS Pressure", "AS WELL AS Composition", "NO Flow"],
+      "consequences": "No fatalities, 30% loss of Western Australia gas supply for weeks",
+      "root_causes": [
+        "CO2 corrosion of carbon steel pipeline at low point (condensate trap)",
+        "Inadequate corrosion monitoring program",
+        "Pipeline inspection had not identified wall thinning",
+        "Lack of intelligent pigging",
+        "Condensate removal procedures inadequate"
+      ],
+      "lessons_learned": [
+        "CO2 corrosion management requires comprehensive approach",
+        "Low points in pipelines are critical locations for corrosion monitoring",
+        "Intelligent pigging programs essential for pipeline integrity",
+        "Corrosion inhibition and condensate management must be maintained",
+        "Single points of failure in critical infrastructure must be identified and mitigated"
+      ],
+      "source": "WA Department of Mines and Petroleum Investigation"
+    },
+    {
+      "id": "INC-018",
+      "title": "BP Grangemouth Steam Drum Failure",
+      "date": "2000-06-10",
+      "location": "Grangemouth, Scotland, UK",
+      "equipment_types": ["heat_exchanger", "pipeline", "valve"],
+      "failure_modes": ["power failure", "loss of steam", "fire", "multiple releases"],
+      "deviation_categories": ["NO Flow", "LESS Pressure", "MORE Temperature"],
+      "consequences": "No fatalities, major fire and releases, FHC unit destroyed",
+      "root_causes": [
+        "Power failure caused loss of multiple systems simultaneously",
+        "Steam drum level lost during power failure",
+        "Failure to follow emergency procedures",
+        "Multiple near-simultaneous releases",
+        "Inadequate emergency response"
+      ],
+      "lessons_learned": [
+        "Power failure scenarios must be comprehensively analyzed in HAZOP",
+        "Emergency operating procedures must be practiced regularly",
+        "UPS and emergency power systems for critical safety equipment",
+        "Common cause failure analysis essential for complex systems",
+        "Simultaneous events can overwhelm response capabilities"
+      ],
+      "source": "HSE Investigation Report"
+    },
+    {
+      "id": "INC-019",
+      "title": "Shell Moerdijk Reactor Explosion",
+      "date": "2014-06-03",
+      "location": "Moerdijk, Netherlands",
+      "equipment_types": ["reactor", "heat_exchanger"],
+      "failure_modes": ["thermal runaway", "overpressure", "explosion"],
+      "deviation_categories": ["MORE Temperature", "MORE Pressure", "LESS Flow"],
+      "consequences": "2 injuries, significant plant damage, community shelter-in-place",
+      "root_causes": [
+        "Runaway reaction during MCHC production",
+        "Cooling system insufficient for upset conditions",
+        "Batch process with narrow safe operating window",
+        "Detection of runaway too late for effective intervention"
+      ],
+      "lessons_learned": [
+        "Batch reactive processes need robust early detection of deviations",
+        "Safety instrumented systems for runaway protection must be independent",
+        "Inherently safer alternatives to batch processing should be evaluated",
+        "Emergency relief must be designed for worst-case runaway"
+      ],
+      "source": "Dutch Safety Board Investigation"
+    },
+    {
+      "id": "INC-020",
+      "title": "Caribbean Petroleum Tank Farm Explosion",
+      "date": "2009-10-23",
+      "location": "Bayamon, Puerto Rico, USA",
+      "equipment_types": ["storage_tank", "pipeline"],
+      "failure_modes": ["tank overflow", "vapor cloud explosion", "fire"],
+      "deviation_categories": ["MORE Level", "MORE Flow", "NO Flow"],
+      "consequences": "No fatalities, 3 injuries, 17 tanks destroyed, 2-day fire",
+      "root_causes": [
+        "Gasoline storage tank overfilled during transfer",
+        "Level gauging system not functioning properly",
+        "No independent high-level shutdown",
+        "Vapor cloud from overflow found ignition source",
+        "Inadequate emergency response capability"
+      ],
+      "lessons_learned": [
+        "Tank overfill protection per API 2350 is essential",
+        "Independent high-level shutoffs required for atmospheric tanks",
+        "Automatic tank gauging must be maintained and calibrated",
+        "Emergency response plans must be tested and adequate",
+        "Atmospheric tank farms require comprehensive safety management"
+      ],
+      "source": "CSB Investigation Report No. 2010-02-I-PR"
+    },
+    {
+      "id": "INC-021",
+      "title": "ExxonMobil Torrance Refinery Explosion",
+      "date": "2015-02-18",
+      "location": "Torrance, California, USA",
+      "equipment_types": ["reactor", "separator", "valve"],
+      "failure_modes": ["overpressure", "explosion", "near-miss catastrophic release"],
+      "deviation_categories": ["MORE Pressure", "MORE Flow", "NO Flow"],
+      "consequences": "4 injuries, near-miss HF release, community impact",
+      "root_causes": [
+        "Electrostatic precipitator in FCC unit experienced abnormal operation",
+        "Expander malfunction led to pressure buildup",
+        "Operator actions during upset were inadequate",
+        "Near-miss of catastrophic hydrofluoric acid release from adjacent alkylation unit",
+        "Debris from explosion landed near HF storage"
+      ],
+      "lessons_learned": [
+        "Inherently safer alternatives to HF alkylation should be implemented",
+        "Domino effects between adjacent units must be assessed",
+        "Operator training for upset conditions is critical",
+        "Community risk from HF must be minimized",
+        "Process hazard analysis must consider interactions between units"
+      ],
+      "source": "CSB Investigation Report No. 2015-02-I-CA"
+    },
+    {
+      "id": "INC-022",
+      "title": "Xcel Energy Cabin Creek Hydroelectric Penstock Failure",
+      "date": "2007-10-02",
+      "location": "Georgetown, Colorado, USA",
+      "equipment_types": ["pipeline", "valve"],
+      "failure_modes": ["overpressure", "pipe rupture", "water hammer"],
+      "deviation_categories": ["MORE Pressure", "REVERSE Flow", "NO Flow"],
+      "consequences": "5 fatalities",
+      "root_causes": [
+        "Penstock rupture during maintenance due to water hammer",
+        "Valve closure created pressure surge",
+        "Penstock weakened by corrosion and age",
+        "Inadequate inspection and maintenance program",
+        "Workers in tunnel during valve operation"
+      ],
+      "lessons_learned": [
+        "Water hammer analysis essential for pipeline systems",
+        "Valve closure rates must be controlled to prevent pressure surges",
+        "Personnel must be excluded from hazard zones during valve operations",
+        "Aging infrastructure requires enhanced inspection programs",
+        "Surge analysis must be part of HAZOP for pipeline systems"
+      ],
+      "source": "CSB Investigation and OSHA Report"
+    }
+  ]
+}
